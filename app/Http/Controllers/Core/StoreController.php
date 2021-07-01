@@ -54,7 +54,14 @@ class StoreController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->all();
+        
+        $store = Store::findOrFail($id);
+
+        $store->update($data);
+
+        return $store;
+
     }
 
     /**
@@ -65,6 +72,10 @@ class StoreController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $store = Store::findOrFail($id);
+
+        $store->delete();
+
+        return ['message'=> 'Deleted'];
     }
 }

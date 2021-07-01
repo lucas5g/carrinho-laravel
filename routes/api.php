@@ -22,4 +22,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::get('stores', [StoreController::class, 'index']);
 Route::post('stores', [StoreController::class, 'store']);
+Route::put('stores/{id}', [StoreController::class, 'update']);
+Route::delete('stores/{id}', [StoreController::class, 'destroy']);
 
