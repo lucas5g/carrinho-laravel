@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-Route::post('login', [AuthController::class, 'login']);
+Route::post('v1/login', [AuthController::class, 'login']);
 
 Route::group([
 
@@ -25,7 +25,7 @@ Route::group([
 
 ], function ($router) {
 
-    Route::post('login', [AuthController::class, 'login']);
+    // Route::post('login', [AuthController::class, 'login']);
     // Route::post('logout', 'AuthController@logout');
     // Route::post('refresh', 'AuthController@refresh');
     // Route::post('me', 'AuthController@me');

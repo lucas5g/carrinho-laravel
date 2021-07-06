@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Core;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreRequest;
 use App\Models\Core\Store;
 use Illuminate\Http\Request;
 
@@ -26,8 +27,15 @@ class StoreController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreRequest $request)
     {
+        // $validation = \Validator::make($request->all(), [
+        //     'cnpj' => ['nullable', 'unique:stores'],
+        // ]);
+
+        // if($validation->fails()){
+        //     return response()->json($validation->errors(), 422);
+        // }
         $data = $request->all();
         return Store::create($data);
 
